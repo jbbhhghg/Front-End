@@ -1,87 +1,232 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Primer Formulario HTML</title>
     <link rel="stylesheet" href="Style.css">
-    <title>FORMULARIO</title>
     <style>
-     
-    </style>
-</head>
-<body>
-    <div class="form-container">
-<body>
-    <h1>FORMULARIO </h1>
-    <h2>GRACIAS POR DETAR SUS DATOS</h2>
- 
-    <form>
-        <label for="Nombre">Nombre:</label>
-        <input type="text" id="Nombre" Nombre="Nombre" placeholder="Introduce tu nombre">
 
-        <label for="Gmail">Gmail:</label>
-        <input type="Gmail" id="Gmail" Nombre="Gmail" placeholder="Introduce tu Gmail">
-
-        <label for="Edad">Edad:</label>
-        <input type="tel" id="Edad" Nombre="Edad" placeholder="Introduce tu edad">
-
-        <label>Cláusula como opción:</label>
-        <select>
-            <option>Selecciona una opcion</option>
-        </select>
-
-        <p>¿Estás pensando en comprar un nuevo Auto en esta área si estás!</p>
-
-        <div class="radio-group">
-            <div class="radio-opcion">
-                <label for="Si">Si:</label>
-                <input type="radio" id="Si" Nombre="plan" value="Si">
-               
-            </div>
-            <div class="radio-opcion">
-                <label for="No">No:</label>
-                <input type="radio" id="No" Nombre="plan" value="No">
-               
-            </div>
-
-            <div class="radio-opcion">
-                <label for="Tal vez">Tal vez:</label>
-                <input type="radio" id="Tal vez" Nombre="plan" value="Tal vez">
-                
-                <input type="text" placeholder="Empiece con su marca favorita">
-            </div>
+</style>
+  </head>
+  <body style="background-color: rgb(231, 180, 146);">
+    <div class="container">
+      <h1 style="background-color: rgb(231, 180, 146);">🧑‍💻 FORMULARIO SENA V1 </h1>
+      <p ><center>GRACIAS POR DEJAR SUS DATOS</center></p>
+      <form id="miFormulario">
+        <!-- Campo de texto simple -->
+        <div class="form-group">
+          <label for="nombre">Nombre completo:</label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            required
+            placeholder="Escribe tu nombre completo"
+            autofocus
+            pattern="[A-za-z ]{3,40}" />
         </div>
 
-        <label>Seleciona una opcion:</label>
-        <select>
-            <option>¿Último tipo de medio de transporte que te importa?</option>
-        </select>
-
-        <div class="radio-group">
-            <div class="radio-opcion">
-                <input type="radio" id="boot" Nombre="transport" value="boot">
-                <label for="boot">Boot:</label>
-                <input type="text" placeholder="Bicycle">
-            </div>
-
-            <div class="radio-opcion">
-                <input type="radio" id="autocrystal" Nombre="transport" value="autocrystal">
-                <label for="autocrystal">Autocrystal:</label>
-                <input type="text" placeholder="Pluss">
-            </div>
-
-            <div class="radio-opcion">
-                <input type="radio" id="bile" Nombre="transport" value="bile">
-                <label for="bile">Bile:</label>
-                <input type="text" placeholder="Any comments suggestions?">
-            </div>
+        <!-- Campo de email -->
+        <div class="form-group">
+          <label for="email">Correo electrónico:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="ejemplo@correo.com" />
         </div>
 
-        <label for="comments">[Cases of title] your comments</label>
-        <textarea id="comments" Nombre="comments"></textarea>
+        <!-- Campo de número -->
+        <div class="form-group">
+          <label for="edad">Edad:</label>
+          <input
+            type="number"
+            id="edad"
+            name="edad"
+            min="18"
+            max="100"
+            required
+            placeholder="Tu edad" />
+        </div>
 
-        <button type="submit" class="submit-btn">Submit</button>
-    </form>
-    
-</body>
+        <!-- Campo de selección -->
+        <div class="form-group">
+          <label for="ciudad">ELIGE LA OPCION:</label>
+          <select id="ciudad" name="ciudad" required>
+            <option value="">Selecciona una opcion</option>
+            <option value="si">si</option>
+            <option value="no">no</option>
+            <option value="tal vez">tal vez</option>
+          </select>
+        </div>
+
+        <!-- Campos de radio -->
+        <div class="form-group">
+          <label>¿planeas comprar un coche nuevo en los proximos 5 años?</label>
+          <input type="radio" 
+          id="principiante" 
+          name="experiencia" 
+          value="principiante" 
+          required />
+          <label for="principiante" style="display: inline; margin-left: 5px">si</label><br />
+          <input type="radio" 
+          id="intermedio" 
+          name="experiencia" 
+          value="intermedio" />
+          <label for="intermedio" style="display: inline; margin-left: 5px">no</label><br />
+          <input type="radio" 
+          id="avanzado" 
+          name="experiencia" 
+          value="avanzado" />
+          <label for="avanzado" style="display: inline; margin-left: 5px">tal vez</label>
+        </div>
+
+       <style>
+  /* Oculta los radios originales */
+  input[type="radio"].cuadro {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #fff;
+    border: 2px solid #444;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    cursor: pointer;
+  }
+
+  /* Estilo cuando está seleccionado */
+  input[type="radio"].cuadro:checked {
+    background-color: #444;
+  }
+
+  /* Alineación de las opciones */
+  .form-group label.option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+    cursor: pointer;
+  }
+</style>
+
+<!-- Campo de selección -->
+        <div class="form-group">
+          <label for="marca">ELIGE LA OPCION:</label>
+          <select id="marca" name="marca" required>
+            <option value="">¿Cuál es tu marca de coche favorita?</option>
+            <option value="ford">ford</option>
+            <option value="honda">honda</option>
+            <option value="BMW">BMW</option>
+             <option value="toyota">toyota</option>
+          </select>
+        </div>
+
+<div class="form-group">
+  <label>¿que tipo de medio de trasporte posee?</label><br>
+
+  <label class="option">
+    <input type="radio" 
+    class="cuadro" 
+    name="marca" 
+    value="carro" required>Carro
+  </label>
+
+  <label class="option">
+    <input type="radio" 
+    class="cuadro" 
+    name="marca" 
+    value="barco"> Barco
+  </label>
+
+  <label class="option">
+    <input type="radio" 
+    class="cuadro"
+     name="marca" 
+     value="bote"> Bote
+  </label>
+
+  <label class="option">
+    <input type="radio" 
+    class="cuadro" 
+    name="marca" 
+    value="motocicleta"> Motocicleta
+  </label>
+
+  <label class="option">
+    <input type="radio" 
+    class="cuadro" 
+    name="marca" 
+    value="bicicleta"> Bicicleta
+  </label>
+</div>
+
+           <!-- Área de texto -->
+        <div class="form-group">
+          <label for="comentarios">¿algun comentario que sugiera?:</label>
+          <textarea id="comentarios" 
+          name="comentarios" 
+          rows="4" 
+          placeholder="por favor agrega tu comentario"></textarea>
+        </div>
+
+        <!-- Botón de envío original -->
+        <button type="submit">🚀 Enviar Formulario</button>
+      </form>
+
+      <div id="resultado" class="resultado">
+        <h3>✅ ¡Formulario enviado exitosamente!</h3>
+        <p>Estos son los datos que enviaste:</p>
+        <div id="datosEnviados"></div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('miFormulario').addEventListener('submit', function (evento) {
+        evento.preventDefault();
+        const formulario = evento.target;
+        const datosFormulario = new FormData(formulario);
+        console.log('📊 Datos del formulario:');
+        for (let [campo, valor] of datosFormulario.entries()) {
+          console.log(`${campo}: ${valor}`);
+        }
+        let datosHTML = '';
+        for (let [campo, valor] of datosFormulario.entries()) {
+          let nombreCampo = campo;
+          switch (campo) {
+            case 'nombre':
+              nombreCampo = 'Nombre completo';
+              break;
+            case 'email':
+              nombreCampo = 'Correo electrónico';
+              break;
+            case 'edad':
+              nombreCampo = 'Edad';
+              break;
+            case 'ciudad':
+              nombreCampo = 'Ciudad';
+              break;
+            case 'experiencia':
+              nombreCampo = 'Experiencia en programación';
+              break;
+            case 'acepto':
+              nombreCampo = 'Términos aceptados';
+              break;
+            case 'comentarios':
+              nombreCampo = 'Comentarios';
+              break;
+          }
+          if (valor && valor.trim() !== '') {
+            datosHTML += `<div class="dato"><span class="etiqueta">${nombreCampo}:</span> ${valor}</div>`;
+          }
+        }
+        document.getElementById('datosEnviados').innerHTML = datosHTML;
+        document.getElementById('resultado').style.display = 'block';
+        document.getElementById('resultado').scrollIntoView({ behavior: 'smooth' });
+        alert('¡Formulario enviado correctamente! 🎉\nRevisa los datos más abajo.');
+      });
+    </script>
+  </body>
 </html>
